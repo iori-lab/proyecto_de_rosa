@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Taller de Alimentos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background: #e5e7eb;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: 260px;
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+            box-shadow: 4px 0 10px rgba(15,23,42,0.6);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .menu-btn {
+            width: 100%;
+            padding: 12px;
+            background: #1f2937;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: left;
+            transition: 0.15s;
+        }
+
+        .menu-btn:hover {
+            background: #374151;
+        }
+
+        .menu-btn.active {
+            background: #0ea5e9;
+        }
+
+        /* ===== MAIN ===== */
+        .main {
+            flex: 1;
+            padding: 25px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(15,23,42,0.15);
+        }
+
+        .info-title {
+            font-size: 19px;
+            margin-bottom: 6px;
+            color: #0f172a;
+        }
+
+        .info-text {
+            font-size: 15px;
+            color: #334155;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .list {
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: #334155;
+        }
+
+        .list li {
+            margin-bottom: 6px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #e2e8f0;
+            color: #1e293b;
+            font-size: 12px;
+            margin-right: 5px;
+            border-radius: 6px;
+            margin-top: 4px;
+        }
+
+        /* IMÁGENES */
+        .food-image {
+            width: 100%;
+            max-height: 260px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-emoji {
+            font-size: 26px;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 12px 0;
+        }
+
+        .steps-title {
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: #0f172a;
+        }
+
+        .steps-list {
+            padding-left: 20px;
+            font-size: 14px;
+            color: #334155;
+        }
+
+        .steps-list li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <div class="logo">Taller de Alimentos</div>
+        <div class="subtitle">24, 25 Y 26 de Novimbre del 2025 <br>
+            10:00am-14:00pm
+        </div>
+
+        <button class="menu-btn active" data-section="mermelada">🍓 Mermelada sin azúcar</button>
+        <button class="menu-btn" data-section="yogur">🥣 Yogur griego natural</button>
+        <button class="menu-btn" data-section="chorizo">🌭 Chorizo bajo en grasa</button>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main">
+
+        <!-- MERMELADA -->
+        <section id="mermelada" class="section active">
+            <div class="section-header">
+                <span class="section-emoji">🍓</span>
+                <div>
+                    <h1>Mermelada sin azúcar</h1>
+                    <div class="section-subtitle">Versión ligera para untar, sin azúcar añadida.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- FOTO (puedes cambiar la URL por una imagen tuya) -->
+                <img class="food-image" src="https://via.placeholder.com/900x400?text=Mermelada+sin+azucar" alt="Mermelada sin azúcar">
+
+                <p class="info-title">¿Qué es?</p>
+                <p class="info-text">
+                    Es una mermelada elaborada con fruta natural (por ejemplo fresas o frutos rojos),
+                    endulzada con stevia, eritritol o sin endulzante extra, aprovechando el dulzor de la fruta.
+                    Es ideal para quienes quieren reducir el consumo de azúcar.
+                </p>
+
+                <p class="info-title">Beneficios</p>
+                <ul class="list">
+                    <li>Menos picos de glucosa en comparación con mermeladas con azúcar.</li>
+                    <li>Menos calorías por porción.</li>
+                    <li>Te permite seguir comiendo algo dulce sin tanto remordimiento.</li>
+                </ul>
+
+                <p class="info-title">Ideas de uso</p>
+                <ul class="list">
+                    <li>Untada en pan integral o tostadas de arroz.</li>
+                    <li>Como topping en yogur natural o avena.</li>
+                    <li>En postres fríos, como relleno ligero de crepas.</li>
+                </ul>
+
+                <span class="tag">Baja en azúcar</span>
+                <span class="tag">Ideal para desayunos</span>
+                <span class="tag">Opción ligera</span>
+
+                <div class="divider"></div>
+
+                <p class="steps-title">Cómo hacer mermelada sin azúcar (versión sencilla)</p>
+                <ol class="steps-list">
+                    <li>Lava y desinfecta aproximadamente 500 g de fresas (o la fruta que quieras).</li>
+                    <li>Corta la fruta en trozos pequeños y colócala en una olla.</li>
+                    <li>Agrega un chorrito de agua (2–3 cucharadas) para que no se pegue al inicio.</li>
+                    <li>Cocina a fuego medio, moviendo de vez en cuando, hasta que la fruta se ablande.</li>
+                    <li>Machaca la fruta con un tenedor o espátula hasta tener la textura deseada.</li>
+                    <li>Si quieres, agrega endulzante sin azúcar (stevia, eritritol) al gusto.</li>
+                    <li>Cocina 5–10 minutos más hasta que espese ligeramente.</li>
+                    <li>Deja enfriar, pasa a un frasco limpio y refrigera. Consumir en pocos días.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- YOGUR -->
+        <section id="yogur" class="section">
+            <div class="section-header">
+                <span class="section-emoji">🥣</span>
+                <div>
+                    <h1>Yogur griego natural</h1>
+                    <div class="section-subtitle">Alto en proteína, sin azúcar añadida.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- FOTO -->
+                <img class="food-image" src="https://via.placeholder.com/900x400?text=Yogur+griego+natural" alt="Yogur griego natural">
+
+                <p class="info-title">¿Qué es?</p>
+                <p class="info-text">
+                    Es un yogur más espeso que el normal, con mayor cantidad de proteína y menos suero. 
+                    En su versión natural, no lleva azúcar añadida, solo leche y cultivos lácticos.
+                </p>
+
+                <p class="info-title">Beneficios</p>
+                <ul class="list">
+                    <li>Aporta proteína que ayuda a mantener músculo.</li>
+                    <li>Aporta saciedad, ayudando a controlar el hambre.</li>
+                    <li>Contiene probióticos que favorecen la flora intestinal.</li>
+                </ul>
+
+                <p class="info-title">Ideas de uso</p>
+                <ul class="list">
+                    <li>En un vaso con fruta picada, avena y un poco de mermelada sin azúcar.</li>
+                    <li>Como base de dips o aderezos (por ejemplo, con limón, ajo y especias).</li>
+                    <li>En licuados con fruta, avena o proteína en polvo.</li>
+                </ul>
+
+                <span class="tag">Alto en proteína</span>
+                <span class="tag">Versátil</span>
+                <span class="tag">Saludable</span>
+
+                <div class="divider"></div>
+
+                <p class="steps-title">Cómo hacer yogur griego casero (versión básica)</p>
+                <ol class="steps-list">
+                    <li>Calienta 1 litro de leche (entera o baja en grasa) hasta que esté caliente pero sin hervir (unos 80 °C aprox.).</li>
+                    <li>Deja enfriar un poco hasta que esté tibia (que puedas meter el dedo sin quemarte).</li>
+                    <li>Agrega 2 cucharadas de yogur natural (con cultivos vivos) y mezcla bien. Ese será tu “cultivo”.</li>
+                    <li>Tapa el recipiente y deja reposar en un lugar tibio de 6 a 8 horas (sin moverlo).</li>
+                    <li>Cuando cuaje y tenga textura de yogur, colócalo sobre una manta de cocina o colador de tela arriba de un bowl.</li>
+                    <li>Deja escurrir en el refrigerador 2–4 horas, para que se separe el suero y quede más espeso.</li>
+                    <li>Pasa el yogur espeso a un recipiente limpio: eso es tu yogur griego natural.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- CHORIZO -->
+        <section id="chorizo" class="section">
+            <div class="section-header">
+                <span class="section-emoji">🌭</span>
+                <div>
+                    <h1>Chorizo bajo en grasa</h1>
+                    <div class="section-subtitle">Versión más ligera del chorizo tradicional.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- FOTO -->
+                <img class="food-image" src="https://via.placeholder.com/900x400?text=Chorizo+bajo+en+grasa" alt="Chorizo bajo en grasa">
+
+                <p class="info-title">¿Qué es?</p>
+                <p class="info-text">
+                    Es una variante del chorizo tradicional hecha con carne más magra (como pavo o cerdo con menos grasa)
+                    y con menos aceite en la preparación. Conserva el sabor, pero reduce la cantidad de grasa y calorías.
+                </p>
+
+                <p class="info-title">Beneficios</p>
+                <ul class="list">
+                    <li>Menor contenido de grasa saturada.</li>
+                    <li>Menos calorías por porción.</li>
+                    <li>Permite disfrutar el sabor del chorizo de forma un poco más ligera.</li>
+                </ul>
+
+                <p class="info-title">Ideas de uso</p>
+                <ul class="list">
+                    <li>Huevos con chorizo bajo en grasa, acompañado de verdura.</li>
+                    <li>Tacos con tortilla integral, pico de gallo y poco queso.</li>
+                    <li>Como ingrediente en burritos o quesadillas más “light”.</li>
+                </ul>
+
+                <span class="tag">Menos grasa</span>
+                <span class="tag">Sabor intenso</span>
+                <span class="tag">Opción más ligera</span>
+
+                <div class="divider"></div>
+
+                <p class="steps-title">Cómo hacer chorizo bajo en grasa (versión casera)</p>
+                <ol class="steps-list">
+                    <li>Elige carne molida magra (por ejemplo pavo o cerdo 90% magro).</li>
+                    <li>En un bowl, mezcla la carne con especias: ajo en polvo, orégano, comino, pimentón/paprika, sal y pimienta.</li>
+                    <li>Agrega un poco de vinagre blanco o de manzana para darle el toque ácido típico del chorizo.</li>
+                    <li>Mezcla muy bien con las manos hasta integrar todo.</li>
+                    <li>Deja reposar la mezcla en el refrigerador mínimo 1–2 horas (mejor si es de un día para otro).</li>
+                    <li>Para cocinar, usa un sartén antiadherente y agrega solo un poquito de aceite o en spray.</li>
+                    <li>Cocina a fuego medio, desmenuzando la carne, hasta que esté bien cocida y ligeramente dorada.</li>
+                </ol>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const buttons = document.querySelectorAll(".menu-btn");
+        const sections = document.querySelectorAll(".section");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                const id = btn.getAttribute("data-section");
+                sections.forEach(sec => {
+                    sec.classList.remove("active");
+                    if (sec.id === id) sec.classList.add("active");
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
